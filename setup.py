@@ -3,11 +3,11 @@ from setuptools import setup, find_namespace_packages
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-NAME = "torm"
+NAME = "gpath"
 
-DESCRIPTION = "mongodb style python orm."
+DESCRIPTION = "package help find the project root folder."
 
-KEYWORDS = "mongodb orm"
+KEYWORDS = "project root folder workspace"
 
 AUTHOR = "Aeneas"
 

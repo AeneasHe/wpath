@@ -1,14 +1,44 @@
 import os
 import sys
+import threading
 
-def find_gpath(path=os.getcwd()):
-    dirs = os.listdir(path)
-    if '.env' in dirs:
-        sys.path.append(path)
-        return path
-    else:
-        path=os.path.dirname(path)
-        return find_gpath(path)
+class SingletonType(type):
+    _instance_lock = threading.Lock()
+    def __call__(cls, *args, **kwargs):
+        if not hasattr(cls, "_instance"):
+            with SingletonType._instance_lock:
+                if not hasattr(cls, "_instance"):
+                    cls._instance = super(SingletonType,cls).__call__(*args, **kwargs)
+        return cls._instance
 
 
-workspace=find_gpath()
+
+
+class Gpath(metaclass=SingletonType):
+    def __init__(self):
+        self.workspace=''
+        self.flag=".env"
+        self.find_gpath()
+
+    def reset(self,flag):
+        self.flag=flag
+        self.workspace=self.find_gpath()
+        return self.workspace
+
+    def find_gpath(self,path=os.getcwd()):
+        dirs = os.listdir(path)
+        if self.flag in dirs:
+            sys.path.append(path)
+            return path
+        else:
+            path=os.path.dirname(path)
+            return self.find_gpath(path)
+
+g = Gpath()
+g.find_gpath()
+
+def reset(flag=".env"):
+    return g.reset(flag)
+
+def workspace():
+    return g.find_gpath()
