@@ -31,6 +31,10 @@ class Gpath(metaclass=SingletonType):
             sys.path.append(path)
             return path
         else:
+            if path=="/":
+                self.workspace=None
+                return None
+                
             path=os.path.dirname(path)
             return self.find_gpath(path)
 

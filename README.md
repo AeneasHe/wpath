@@ -1,6 +1,6 @@
 # Gpath
 
-help find the project root folder
+Gpath: a package help you find the project workspace
 
 ## Install
 ```
@@ -13,15 +13,21 @@ or
 pip install gpath
 ```
 ## Env file
-add .env file to your project root folder.
+add .env file to your project workspace.
 
 ## Useage
 
 ``` python
-# this will add your root folder to python path
 import gpath
+# this will add your workspace to python path
+# by default, gpath will search parent folder which has an '.env' file as workspace flag
 
-# show project root folder
-print(gpath.workspace)
+# show project workspace, 
+# if not found the flag, gpath.workspace() will return None
+print(gpath.workspace())
+
+# change default flag
+gpath.reset('.gitignore')
+print(gpath.workspace())
 
 ```
