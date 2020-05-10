@@ -38,11 +38,17 @@ class Gpath(metaclass=SingletonType):
             path=os.path.dirname(path)
             return self.find_gpath(path)
 
-g = Gpath()
-g.find_gpath()
+_wpath = Wpath()
+_wpath.find_gpath()
 
 def reset(flag=".env"):
-    return g.reset(flag)
+    return _wpath.reset(flag)
 
 def workspace():
-    return g.find_gpath()
+    return _wpath.find_gpath()
+
+def add(path):
+    if os.path.exists(path):
+        sys.path.insert(0,path)
+    else:
+        raise Exception(f"{path} not exists")
