@@ -28,7 +28,7 @@ class Gpath(metaclass=SingletonType):
     def find_gpath(self,path=os.getcwd()):
         dirs = os.listdir(path)
         if self.flag in dirs:
-            sys.path.append(path)
+            sys.path.insert(0,path)
             return path
         else:
             if path=="/":
