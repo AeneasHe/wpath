@@ -14,7 +14,7 @@ class SingletonType(type):
 
 
 
-class Gpath(metaclass=SingletonType):
+class Wpath(metaclass=SingletonType):
     def __init__(self):
         self.workspace=''
         self.flag=".env"
