@@ -15,20 +15,20 @@ AUTHOR_EMAIL = "kai.he@taraxa.io"
 
 URL = "https://github.com/cofepy"
 
-VERSION = "0.0.5"
+VERSION = "0.0.6"
 
 LICENSE = "MIT"
 
 setup(
     name=NAME,
     version=VERSION,
-    python_requires='>=3.7',
+    python_requires=">=3.7",
     install_requires=[],
     classifiers=[
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python',
-        'Intended Audience :: Developers',
-        'Operating System :: OS Independent',
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python",
+        "Intended Audience :: Developers",
+        "Operating System :: OS Independent",
     ],
     keywords=KEYWORDS,
     author=AUTHOR,
