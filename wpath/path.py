@@ -12,37 +12,41 @@ class SingletonType(type):
         return cls._instance
 
 
-
+FLAGS=[".env",".gitignore",".git","package.json"] 
 
 class Wpath(metaclass=SingletonType):
     def __init__(self):
         self.workspace=''
-        self.flag=".env"
+        self.flags=FLAGS
         self.find_gpath()
 
-    def reset(self,flag):
-        self.flag=flag
+    def reset(self,flags):
+        self.flags=flags
         self.workspace=self.find_gpath()
         return self.workspace
 
     def find_gpath(self,path=os.getcwd()):
         dirs = os.listdir(path)
-        if self.flag in dirs:
-            sys.path.insert(0,path)
-            return path
-        else:
-            if path=="/":
-                self.workspace=None
-                return None
-                
-            path=os.path.dirname(path)
-            return self.find_gpath(path)
+        for flag in self.flags:
+            if flag in dirs:
+                sys.path.insert(0,path)
+                return path
+   
+        if path=="/":
+            self.workspace=None
+            return None
+            
+        path=os.path.dirname(path)
+        return self.find_gpath(path)
 
 _wpath = Wpath()
-_wpath.find_gpath()
+_workspace=_wpath.find_gpath()
 
-def reset(flag=".env"):
-    return _wpath.reset(flag)
+if not _workspace:
+    raise Exception(f"No flag of {FLAGS} foundd in project root folder, please add one in it.")
+
+def reset(flags=FLAGS):
+    return _wpath.reset(flags)
 
 def workspace():
     return _wpath.find_gpath()

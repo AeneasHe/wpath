@@ -13,7 +13,8 @@ or
 pip install wpath
 ```
 ## Env file
-add .env file to your project workspace.
+
+add one of flags [".env",".gitignore",".git","package.json"]  into your project workspace.
 
 ## Useage
 
@@ -27,7 +28,7 @@ import wpath
 print(wpath.workspace())
 
 # change default flag
-wpath.reset('.gitignore')
+wpath.reset(['.gitignore'])
 print(wpath.workspace())
 
 ```
