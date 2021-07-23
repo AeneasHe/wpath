@@ -1,9 +1,9 @@
 
 import path
-import gpath
+import wpath
 
-gpath.reset(flag=".gitignore")
+wpath.reset(flag=".gitignore")
 
-workspace = gpath.workspace()
+workspace = wpath.workspace()
 
 print(workspace)
