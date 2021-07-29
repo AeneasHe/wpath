@@ -2,7 +2,7 @@ from .path import reset, workspace, add
 
 from .utl import today, now, yesterday, xprint, pretty
 
-from .print import *
+from .wprint import *
 
 from .log import *
 
