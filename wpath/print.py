@@ -1,3 +1,10 @@
+import platform
+
+if platform.system()=="Windows":
+    import colorama
+    from colorama import init,Fore,Back,Style
+    init(autoreset=True)
+    
 def pretty(data, lpadding=1, not_end=False):
     if data == None:
         return "None"

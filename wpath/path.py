@@ -43,7 +43,7 @@ class Wpath(metaclass=SingletonType):
                 sys.path.insert(0, path)
                 return path
 
-        if path == "/":
+        if path == "/" or ":" in path:
             self.workspace = None
             return None
 
@@ -56,7 +56,8 @@ _workspace = _wpath.find_gpath()
 
 if not _workspace:
     raise Exception(
-        f"No flag of {FLAGS} is founded in project root folder, please add one in it."
+        f"No flag file: {FLAGS} is founded in project root folder.\n\
+        Make sure your are in the project folder and add one flag file in it."
     )
 
 
