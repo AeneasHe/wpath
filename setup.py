@@ -11,11 +11,11 @@ KEYWORDS = "project root folder workspace"
 
 AUTHOR = "Aeneas"
 
-AUTHOR_EMAIL = "kai.he@taraxa.io"
+AUTHOR_EMAIL = "aeneas.he@gmail.com"
 
-URL = "https://github.com/cofepy"
+URL = "https://github.com/aeneashe/wpath"
 
-VERSION = "0.1.2"
+VERSION = "0.1.3"
 
 LICENSE = "MIT"
 
@@ -23,7 +23,7 @@ setup(
     name=NAME,
     version=VERSION,
     python_requires=">=3.7",
-    install_requires=["print_pretty","colorama"],
+    install_requires=["print_pretty", "colorama"],
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",

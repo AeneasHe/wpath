@@ -1,4 +1,4 @@
-from wpath import findcaller
+from wpath.code import findcaller
 
 
 class Base(object):

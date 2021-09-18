@@ -1,7 +1,7 @@
 from __future__ import print_function
 from .types import *
 
-
+# 用来查找调用函数的代码行，方便调试
 def findcaller(func):
     """
     查看调用者的文件位置路径和代码调用所在的行数，
@@ -38,13 +38,14 @@ def findcaller(func):
     return wrapper
 
 
+# 用来查看对象的所有属性和方法
 class Atts(object):
 
     """
     一般用于调试某个对象时使用，当前这个工具类会将调试对象和其所属的所有继承对象的属性依次罗列出来。
-    
+
     变量 showed_list 它是一个类变量, 用于记录已显示过的对象.
-    
+
     使用方法:
     Atts.show(调试对象)
     """
@@ -63,11 +64,11 @@ class Atts(object):
         show_internal=False,  # 打印内部属性
     ):
         """
-        :param _class: 必填, 任意对象. 
-        :param show_attr: 是否显示_class对象的所有attribute.                 
+        :param _class: 必填, 任意对象.
+        :param show_attr: 是否显示_class对象的所有attribute.
         :param show_doc: 是否显示_class对象的__doc__属性.
-        :param _child_class: 内部使用的参数, 用来传递_class对象的子类.                 
-        :return: 
+        :param _child_class: 内部使用的参数, 用来传递_class对象的子类.
+        :return:
         """
 
         def _show(class_name):
@@ -83,7 +84,10 @@ class Atts(object):
             if show_generate:
                 if _child_class:
                     print(
-                        "\n", cstr(class_name), " ==> ", cstr(_child_class),
+                        "\n",
+                        cstr(class_name),
+                        " ==> ",
+                        cstr(_child_class),
                     )
                 else:
                     print("\n", cstr(class_name))
@@ -144,4 +148,3 @@ class Atts(object):
                     show_internal=show_internal,
                     show_parents=show_parents,
                 )
-

@@ -47,13 +47,17 @@ class ColoredFormatter(logging.Formatter):
 
 # Custom logger class with multiple destinations
 class ColoredLogger(logging.Logger):
-    FORMAT = "[$BOLD%(name)-20s$RESET][%(levelname)-18s]  %(message)s ($BOLD%(filename)s$RESET:%(lineno)d)"
-    COLOR_FORMAT = formatter_message(FORMAT, True)
-
-    def __init__(self, name):
+    def __init__(self, name, min_length=None):
         logging.Logger.__init__(self, name, logging.DEBUG)
 
-        color_formatter = ColoredFormatter(self.COLOR_FORMAT)
+        if min_length:
+            FORMAT = f"[$BOLD%(name)-{min_length}s$RESET][%(levelname)-20s]($BOLD%(pathname)s$RESET:%(lineno)d) : %(message)s "
+        else:
+            FORMAT = f"[$BOLD%(name)s$RESET] [%(levelname)-20s]($BOLD%(pathname)s$RESET:%(lineno)d) : %(message)s "
+
+        COLOR_FORMAT = formatter_message(FORMAT, True)
+
+        color_formatter = ColoredFormatter(COLOR_FORMAT)
 
         console = logging.StreamHandler()
         console.setFormatter(color_formatter)

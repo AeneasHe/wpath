@@ -3,18 +3,6 @@ import time
 from print_pretty import print_pretty
 
 
-def today():
-    return datetime.datetime.now().strftime("%Y-%m-%d")
-
-
-def yesterday():
-    return (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
-
-
-def now():
-    return int(time.time())
-
-
 def pretty(data, lpadding=1, not_end=False, max_len=0):
     if data == None:
         return "None"
@@ -22,7 +10,7 @@ def pretty(data, lpadding=1, not_end=False, max_len=0):
     if type(data) == str:
         if len(data) > 50:
             data = data[:25] + "....." + data[-25:]
-        return " " * lpadding + "\'"+data+"\'"
+        return " " * lpadding + "'" + data + "'"
 
     if type(data) == int:
         return " " * lpadding + str(data)
@@ -34,8 +22,7 @@ def pretty(data, lpadding=1, not_end=False, max_len=0):
             value = (
                 "[\n"
                 + join_split.join(
-                    [pretty(d, lpadding=max_len+5, not_end=False)
-                        for d in data]
+                    [pretty(d, lpadding=max_len + 5, not_end=False) for d in data]
                 )
                 + "\n"
                 + " " * (max_len)
@@ -47,8 +34,7 @@ def pretty(data, lpadding=1, not_end=False, max_len=0):
             value = (
                 "["
                 + join_split.join(
-                    [pretty(d, lpadding=max_len+1, not_end=False)
-                        for d in data]
+                    [pretty(d, lpadding=max_len + 1, not_end=False) for d in data]
                 )
                 + " " * (max_len)
                 + " ]"
@@ -68,8 +54,7 @@ def pretty(data, lpadding=1, not_end=False, max_len=0):
                     "[\n"
                     + ""
                     + "\n".join(
-                        [pretty(d, lpadding=max_len + 5, not_end=True)
-                         for d in data[k]]
+                        [pretty(d, lpadding=max_len + 5, not_end=True) for d in data[k]]
                     )
                     + "\n"
                     + " " * (max_len + 3)
@@ -83,20 +68,14 @@ def pretty(data, lpadding=1, not_end=False, max_len=0):
 
             value = str(value).lstrip("\n").lstrip(" ")
 
-            values += f'  {" "*lpadding}{"".ljust(max_len, " ")}{pretty(k)} : {value},\n'
+            values += (
+                f'  {" "*lpadding}{"".ljust(max_len, " ")}{pretty(k)} : {value},\n'
+            )
 
         values += " " * lpadding + "}"
         if not_end:
             values += ","
         return values
-
-
-def xprint(data):
-    # try:
-    print(pretty(data))
-    # except Exception as e:
-    #     print("format error =========>")
-    #     print(e)
 
 
 def yprint(data):
@@ -107,6 +86,11 @@ def yprint(data):
 
 
 if __name__ == "__main__":
-    a = {'1': 2, 2: 'a', 3: 'b', 4: 'c', 5: 'd'}
-    b = [a, a, a, a, ]
+    a = {"1": 2, 2: "a", 3: "b", 4: "c", 5: "d"}
+    b = [
+        a,
+        a,
+        a,
+        a,
+    ]
     xprint(b)

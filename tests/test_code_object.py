@@ -1,5 +1,5 @@
 from wpath import Atts
-from fox import Fox
+from tests.test_fox import Fox
 
 Atts.show(Fox("Tom", name="Kate", sex="female"), show_parents=True)
 
