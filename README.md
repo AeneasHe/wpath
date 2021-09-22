@@ -2,18 +2,18 @@
 
 wpath: a package help add project workspace to python search path and other many small tools
 
-python¿ª·¢µÄÒ»ÏµÁĞĞ¡¹¤¾ß,ºËĞÄ¹¦ÄÜ£º
+pythonå¼€å‘çš„ä¸€ç³»åˆ—å°å·¥å…·,æ ¸å¿ƒåŠŸèƒ½ï¼š
 
-- ×Ô¶¯½«µ±Ç°ÏîÄ¿µÄ¹¤×÷Ä¿Â¼Ìí¼Óµ½pythonËÑË÷°ü  
-    ¹¤×÷Ä¿Â¼µÄ¶¨ÒåÊÇ£º¸ÃÄ¿Â¼ÏÂÃæÓĞ³£¼ûµÄÏîÄ¿¼¶ÎÄ¼ş£º.env,.gitignore,package.json,go.mod,go.sum,tsconfig.json
-- ½«Ä³¸öÄ¿Â¼Ìí¼Óµ½ËÑË÷Ä¿Â¼  
+- è‡ªåŠ¨å°†å½“å‰é¡¹ç›®çš„å·¥ä½œç›®å½•æ·»åŠ åˆ°pythonæœç´¢åŒ…  
+    å·¥ä½œç›®å½•çš„å®šä¹‰æ˜¯ï¼šè¯¥ç›®å½•ä¸‹é¢æœ‰å¸¸è§çš„é¡¹ç›®çº§æ–‡ä»¶ï¼š.env,.gitignore,package.json,go.mod,go.sum,tsconfig.json
+- å°†æŸä¸ªç›®å½•æ·»åŠ åˆ°æœç´¢ç›®å½•  
     wpath.add("your folder path")
-- ²ÊÉ« print  
-    ºì£ºprint_r£¬ÂÌ£ºprint_r,À¶:print_b,»Æ£ºprint_y,·Û£ºprint_m,ºÚ:print_k,°×:print_w
-- ×Öµä¸ñÊ½´òÓ¡ print  
-- ²ÊÉ«ÈÕÖ¾´¦ÀíÄ£¿é log  
-- Ê±¼ä´¦ÀíÄ£¿é time  
-- ´úÂëµ÷ÊÔÄ£¿é code  
+- å½©è‰² print  
+    çº¢ï¼šprint_rï¼Œç»¿ï¼šprint_r,è“:print_b,é»„ï¼šprint_y,ç²‰ï¼šprint_m,é»‘:print_k,ç™½:print_w
+- å­—å…¸æ ¼å¼æ‰“å° print  
+- å½©è‰²æ—¥å¿—å¤„ç†æ¨¡å— log  
+- æ—¶é—´å¤„ç†æ¨¡å— time  
+- ä»£ç è°ƒè¯•æ¨¡å— code  
 
 ## Install
 
