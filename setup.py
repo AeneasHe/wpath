@@ -15,7 +15,7 @@ AUTHOR_EMAIL = "aeneas.he@gmail.com"
 
 URL = "https://github.com/aeneashe/wpath"
 
-VERSION = "0.1.3"
+VERSION = "0.1.4"
 
 LICENSE = "MIT"
 
