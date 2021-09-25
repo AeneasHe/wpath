@@ -1,4 +1,4 @@
-from .print import *
+from .wprint import *
 
 basic_types = [
     "<class 'list'>",

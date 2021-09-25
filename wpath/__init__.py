@@ -2,7 +2,7 @@ from .path import reset, workspace, add
 
 from .utl import *
 
-from .print import *
+from .wprint import *
 
 from .log import *
 
